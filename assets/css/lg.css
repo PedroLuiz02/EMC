@@ -59,6 +59,10 @@ html {
   text-decoration: none;
 }
 
+#lg-btn {
+  background-color: #3C4FAF;
+}
+
 .footer{
   background-color: #FFFF;
   display: flex;
