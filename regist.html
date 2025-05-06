@@ -19,90 +19,62 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" rel="prev" href="index.html">Home</a>
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cursos.html">Cursos</a>
+              <a class="nav-link" aria-current="page" href="cursos.html">Cursos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="emissão.html">Emissão</a>
+              <a class="nav-link" aria-current="page" href="emissão.html">Emissão</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="validação.html">Validação</a>
+              <a class="nav-link" aria-current="page" href="validação.html">Validação</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">Dashboard</a>
+              <a class="nav-link" aria-current="page" href="dashboard.html">Dashboard</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="bt">
+    <div class="bt me-3">
       <button type="button" class="btn btn-outline-primary"><a href="log_in.html">Login</a></button>
       <button type="button" class="btn btn-outline-secondary"><a href="#">Cadastro</a></button>
     </div>
   </header>
 
-  <form class="area container-fluid w-25 p-3">
-    <div class="mb-3">
+  <div>
+    <form id="bg-regist" class="area w-25 container-fluid p-3 mx-auto my-4">
+      <div>
         <label for="FormControlInput1" class="form-label">Nome Completo</label>
         <input type="text" class="form-control" id="FormControlInput1" placeholder="Insira o seu nome">
       </div>
+      <br>
 
-    <div class="mb-3">
-      <label for="FormControlInput2" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="FormControlInput2" placeholder="Digite seu e-mail">
-    </div>
-    <div class="mb-3">
+      <div class="mb-2">
+        <label for="FormControlInput2" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="FormControlInput2" placeholder="Digite seu e-mail">
+      </div>
+      <div>
         <label for="FormControlInput2" class="form-label">Confirme seu e-mail</label>
         <input type="email" class="form-control" id="FormControlInput2" placeholder="Confirme seu e-mail">
       </div>
+      <br>
 
-    <label for="inputPassword5" class="form-label">Senha</label>
-    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Digite a senha">
-    <label for="inputPassword1" class="form-label">Confirmar Senha</label>
-    <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Confirme sua senha"> <br>
+      <div class="mb-2">
+        <label for="inputPassword5" class="form-label">Senha</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Digite a senha">
+      </div>
+      <div>
+        <label for="inputPassword1" class="form-label">Confirmar Senha</label>
+        <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Confirme sua senha">
+      </div> 
+    <br>
 
-    <div class="d-grid gap-2 col-10 mx-auto">
-        <button class="btn btn-primary" id="rg-btn" type="button">Cadastre-se</button>
-    </div>
-  </form>
-
-  <div class="d-flex align-items-end"></div>
-    <footer class="footer w-100 p-3">
-    <div>
-      <h6>Sobre</h6>
-      <ul>
-        <li>??</li>
-        <li>??</li>
-        <li>??</li>
-      </ul>
-    </div>
-    <div>
-      <h6>Produtos</h6>
-      <ul>
-        <li>??</li>
-        <li>??</li>
-        <li>??</li>
-      </ul>
-    </div>
-    <div>
-      <h6>Links</h6>
-      <ul>
-        <li><a>??</a></li>
-        <li><a>??</a></li>
-        <li><a>??</a></li>
-      </ul>
-    </div>
-    <div>
-      <h6>Contato</h6>
-      <ul>
-        <li><a>??</a></li>
-        <li><a>??</a></li>
-        <li><a>??</a></li>
-      </ul>
-    </div>
-    </footer>
+      <div class="d-grid gap-2 col-10 mx-auto">
+          <button class="btn btn-primary" id="rg-btn" type="button">Cadastre-se</button>
+      </div>
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
