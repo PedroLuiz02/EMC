@@ -19,6 +19,10 @@ html {
   justify-content: space-evenly;
 }
 
+#nb {
+  background: #FFF;
+}
+
 .nav li{
   list-style: none;
   display: inline;
