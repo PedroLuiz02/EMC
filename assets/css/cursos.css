@@ -29,6 +29,10 @@ html {
     text-decoration: none;
     color: black;
 }
+
+.nav a:active {
+    font-weight: bold;
+  }
   
 .bt {
     margin: 10px 2px;
@@ -38,18 +42,9 @@ html {
     text-decoration: none;
     color: black;
 }
-  
-.footer{
-    background-color: #FFFF;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-  
-.footer li {
-    list-style: none;
-}
-  
-.footer a {
-    text-decoration: none;
+
+#rt {
+    background-color: #D9D9D9;
+    width: 85rem;
+    height: 34rem;
 }

@@ -32,7 +32,7 @@ html {
   color: black;
 }
 
-.nav a:after {
+.nav a:active {
   font-weight: bold;
 }
 
@@ -45,3 +45,8 @@ html {
   color: black;
 }
 
+#rt {
+    background-color: #D9D9D9;
+    width: 85rem;
+    height: 34rem;
+}
