@@ -22,7 +22,7 @@ html {
 #nb {
     background: #FFF;
   }
-  
+
 .nav li{
     list-style: none;
     display: inline;
@@ -50,5 +50,5 @@ html {
 #rt {
     background-color: #FFF;
     width: 85rem;
-    height: 67rem;
+    height: 34rem;
 }

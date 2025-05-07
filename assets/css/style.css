@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css");
+
 html {
   height: 100%;
   width: 100%;
@@ -19,6 +21,10 @@ html {
   justify-content: space-evenly;
 }
 
+#nb {
+  background: #FFF;
+}
+
 .nav li{
   list-style: none;
   display: inline;
@@ -30,6 +36,10 @@ html {
   color: black;
 }
 
+.nav a:after {
+  font-weight: bold;
+}
+
 .bt {
   margin: 10px 2px;
 }
@@ -39,17 +49,3 @@ html {
   color: black;
 }
 
-.footer{
-  background-color: #FFFF;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.footer li {
-  list-style: none;
-}
-
-.footer a {
-  text-decoration: none;
-}
