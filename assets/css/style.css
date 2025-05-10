@@ -25,6 +25,10 @@ html {
   background: #FFF;
 }
 
+#nv {
+  background-color: #FFF;
+}
+
 .nav li{
   list-style: none;
   display: inline;
