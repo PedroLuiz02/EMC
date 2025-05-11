@@ -27,13 +27,13 @@
 
   <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
     <h4>Adicionar Usuário</h4>
-    <form id="userForm" class="row g-3 mb-4">
-      <input type="hidden" id="userId">
+    <form id="usuarioForm" class="row g-3 mb-4">
+      <input type="hidden" id="usuarioId">
       <div class="col-md-5">
-        <input type="email" id="email" class="form-control" placeholder="Email" required="">
+        <input type="email" id="emailUsuario" class="form-control" placeholder="Email" required="">
       </div>
       <div class="col-md-5">
-        <input type="password" id="senhaUser" class="form-control" placeholder="Senha" required="">
+        <input type="password" id="senhaUsuario" class="form-control" placeholder="Senha" required="">
       </div>
       <div class="col-md-2 d-grid">
           <button type="submit" class="btn btn-success">Salvar</button>
@@ -48,7 +48,7 @@
           <th scope="col">Ações</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider">
+      <tbody class="table-group-divider" id="usuariosTableBody">
         <tr>
           <th scope="row">1</th>
           <td>admin@emc.com</td>
