@@ -119,5 +119,8 @@ function cadastrar(){
         msgError.innerHTML = '<strong>Preencha todos os campos corretamente</strong>'
         msgSucess.innerHTML = ''
         msgSucess.setAttribute('style', 'display: none')
+        setTimeout(() =>{
+            document.getElementById("msgError").style.display = "none";
+        }, 2700)
     }
 }

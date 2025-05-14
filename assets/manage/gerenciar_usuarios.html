@@ -21,22 +21,29 @@
       </div>
     </nav>
     <div class="bt me-3">
-      <button type="button" class="btn btn-outline-danger"><a href="../../dashboard.html">Sair</a></button>
+      <button type="button" class="btn btn-danger"><a href="../../dashboard.html" style="color: #fff;">Sair</a></button>
     </div>
   </header>
 
   <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
     <h4>Adicionar Usuário</h4>
+
+    <div id="msgError" class="mb-2"></div>
+    <div id="msgSucess" class="mb-2"></div>
+
     <form id="usuarioForm" class="row g-3 mb-4">
       <input type="hidden" id="usuarioId">
-      <div class="col-md-5">
-        <input type="email" id="emailUsuario" class="form-control" placeholder="Email" required="">
+      <div class="col-md-3">
+        <input type="text" id="nomeUsuario" class="form-control" placeholder="Nome" required>
       </div>
-      <div class="col-md-5">
-        <input type="password" id="senhaUsuario" class="form-control" placeholder="Senha" required="">
+      <div class="col-md-3">
+        <input type="email" id="emailUsuario" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="col-md-3">
+        <input type="password" id="senhaUsuario" class="form-control" placeholder="Senha" required>
       </div>
       <div class="col-md-2 d-grid">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <button class="btn btn-success" type="button" onclick='cadastrar()'>Salvar</button>
       </div>
     </form>
 
@@ -44,6 +51,7 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">Nome</th>
           <th scope="col">Email</th>
           <th scope="col">Ações</th>
         </tr>
@@ -51,6 +59,7 @@
       <tbody class="table-group-divider" id="usuariosTableBody">
         <tr>
           <th scope="row">1</th>
+          <td>admin</td>
           <td>admin@emc.com</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
@@ -62,6 +71,7 @@
 
         <tr>
           <th scope="row">2</th>
+          <td>coadmin</td>
           <td>coadmin@emc.com</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
@@ -76,6 +86,7 @@
     </table>
   </div>
 
+  <script src="../js/usuarios.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
