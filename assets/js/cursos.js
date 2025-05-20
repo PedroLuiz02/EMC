@@ -1,53 +1,128 @@
+const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+if (usuario) {
+    document.querySelector('#loginCadastro').innerHTML = `
+        <span class="me-3">Olá, ${usuario.nome}</span>
+        <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+    `;
+}
+
+function logout() {
+    localStorage.removeItem('usuarioLogado');
+    localStorage.removeItem('token');
+    window.location.href = 'log_in.html';
+}
+
+if(localStorage.getItem('token') == null){
+  alert('você precisa estar logado para acessar essa página')
+  window.location.href = "log_in.html";
+}
+
 let modal = document.querySelector('.modal-container')
-let usuariosForm = document.querySelector('#usuarioForm')
-let usuariosTBody = document.querySelector('#usuariosTBody')
-let nomeUsuario = document.querySelector('#nomeUsuario')
-let emailUsuario = document.querySelector('#emailUsuario')
-let senhaUsuario = document.querySelector('#senhaUsuario')
+let cursosForm = document.querySelector('#CursoForm')
+let cursoTBody = document.querySelector('#CursoTBody')
+let nomeCurso = document.querySelector('#nomeCurso')
+let descCurso = document.querySelector('#descCurso')
+let cargaHorariaCurso = document.querySelector('#cargaHorariaCurso')
 let btnSalvar = document.querySelector('#btnSalvar')
 
-let M_nomeUsuario = document.querySelector('#M_nomeUsuario')
-let M_emailUsuario = document.querySelector('#M_emailUsuario')
-let M_senhaUsuario = document.querySelector('#M_senhaUsuario')
+let M_nomeCurso = document.querySelector('#M_nomeCurso')
+let M_descCurso = document.querySelector('#M_descCurso')
+let M_cargaHorariaCurso = document.querySelector('#M_cargaHorariaCurso')
 let M_btnSalvar = document.querySelector('#M_btnSalvar')
+
+let msgSucess = document.querySelector('#msgSucess')
+let msgError = document.querySelector('#msgError')
+
+let ValidNome = false
+let ValidDesc = false
+let ValidCargaHoraria = false
 
 let itens
 let id
 
-function cadastrarUser() {
-  itens = JSON.parse(localStorage.getItem('usuarios')) || []
-
-  const novoUsuario = {
-    nome: nomeUsuario.value,
-    email: emailUsuario.value,
-    senha: senhaUsuario.value
+nomeCurso.addEventListener('keyup', () => {
+  if (nomeCurso.value.length <= 2) {
+    nomeCurso.setAttribute('style', 'border-color: red')
+    ValidNome = false
+  } else {
+    nomeCurso.setAttribute('style', 'border-color: green')
+    ValidNome = true
   }
+})
+
+
+descCurso.addEventListener('keyup', () => {
+  if (descCurso.value.length <= 7) {
+    descCurso.setAttribute('style', 'border-color: red')
+    ValidDesc = false
+  } else {
+    descCurso.setAttribute('style', 'border-color: green')
+    ValidDesc = true
+  }
+})
+
+cargaHorariaCurso.addEventListener('keyup', () => {
+  if (cargaHorariaCurso.value.length >=4) {
+    cargaHorariaCurso.setAttribute('style', 'border-color: red')
+      ValidCargaHoraria = false
+  } else {
+    cargaHorariaCurso.setAttribute('style', 'border-color: green')
+      ValidCargaHoraria = true
+  }
+})
+
+function cadastrarCurso() {
+  if (ValidNome && ValidDesc && ValidCargaHoraria){
+    itens = JSON.parse(localStorage.getItem('cursos')) || []
+
+    const novoCurso = {
+    nome: nomeCurso.value,
+    desc: descCurso.value,
+    cargaHoraria: cargaHorariaCurso.value
+    }
   
-  itens.push(novoUsuario)
+    itens.push(novoCurso)
+    localStorage.setItem('cursos', JSON.stringify(itens))
 
-  localStorage.setItem('usuarios', JSON.stringify(itens))
+    msgSucess.style.display = 'block'
+    msgSucess.innerHTML = '<strong>Curso inserido com sucesso!</strong>'
+    msgError.style.display = 'none'
 
-  loadItens()
+    setTimeout(() => {
+    msgSucess.style.display = 'none'
+    }, 2500)
 
-  nomeUsuario.value = ''
-  emailUsuario.value = ''
-  senhaUsuario.value = ''
+    nomeCurso.value = ''
+    descCurso.value = ''
+    cargaHorariaCurso.value = ''
+    loadItens()
+
+}else {
+    msgError.style.display = 'block'
+    msgError.innerHTML = '<strong>Preencha os dados corretamente!</strong>'
+    msgSucess.style.display = 'none'
+
+    setTimeout(() => {
+      msgError.style.display = 'none'
+    }, 2500)
+}
 }
 
 function loadItens() {
-  itens = JSON.parse(localStorage.getItem('usuarios')) || []
-  usuariosTBody.innerHTML = ''
+  itens = JSON.parse(localStorage.getItem('cursos')) || []
+  cursoTBody.innerHTML = ''
   itens.forEach((item, index) => {
     insertItem(item, index)
   })
 }
 
 function getItensBD() {
-  return JSON.parse(localStorage.getItem('usuarios')) || []
+  return JSON.parse(localStorage.getItem('cursos')) || []
 }
 
 function setItensBD() {
-  localStorage.setItem('usuarios', JSON.stringify(itens))
+  localStorage.setItem('cursos', JSON.stringify(itens))
 }
 
 function insertItem(item, index) {
@@ -55,7 +130,8 @@ function insertItem(item, index) {
 
   tr.innerHTML = `
     <td>${item.nome}</td>
-    <td>${item.email}</td>
+    <td>${item.desc}</td>
+    <td>${item.cargaHoraria}</td>
     <td class="action">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="editItem(${index})">Editar</button>
     </td>
@@ -64,16 +140,16 @@ function insertItem(item, index) {
     </td>
   `
 
-  usuariosTBody.appendChild(tr)
+  cursoTBody.appendChild(tr)
 }
 
 function editItem(index) {
   id = index
-  const usuario = itens[index]
+  const curso = itens[index]
 
-  M_nomeUsuario.value = usuario.nome
-  M_emailUsuario.value = usuario.email
-  M_senhaUsuario.value = usuario.senha
+  M_nomeCurso.value = curso.nome
+  M_descCurso.value = curso.desc
+  M_cargaHorariaCurso.value = curso.cargaHoraria
 }
 
 function deleteItem(index) {
@@ -84,9 +160,9 @@ function deleteItem(index) {
 
 M_btnSalvar.addEventListener('click', () => {
   itens[id] = {
-    nome: M_nomeUsuario.value,
-    email: M_emailUsuario.value,
-    senha: M_senhaUsuario.value
+    nome: M_nomeCurso.value,
+    desc: M_descCurso.value,
+    cargaHoraria: M_cargaHorariaCurso.value
   }
 
   setItensBD()
