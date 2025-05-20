@@ -51,6 +51,18 @@ html {
 
 #rt {
     background-color: #D9D9D9;
-    width: 29rem;
+    width: 44rem;
     height: 34rem;
+}
+
+#rt2 {
+    background-color: #D9D9D9;
+    width: 38rem;
+    height: 26.5rem;
+}
+
+#rt3 {
+    background-color: #D9D9D9;
+    width: 38rem;
+    height: 6rem;
 }

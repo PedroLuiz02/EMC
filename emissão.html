@@ -43,21 +43,53 @@
     </div>
   </header>
 
-  <div class="d-flex flex-row mb-3">
-    <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-1">
-      <h3>Alunos</h3>
-      <h3>Cursos</h3>
-    </div>
-    <div>
-      <div id="rt2">
-
+  <div class="container text-center">
+    <div class="row">
+      <div id="rt" class="rounded-4 container-sm my-4 px-4 py-3 col align-self-start">
+        <div class="mb-5">
+          <h3>Alunos</h3>
+          <div class="form-floating">
+            <select class="form-select" id="alunoSelect" aria-label="Floating label select example">
+              <option value="">Selecione</option>
+            </select>
+            <label for="floatingSelect">Selecione o Aluno</label>
+          </div>
+        </div>
+        <br>
+        <div>
+          <h3>Cursos</h3>
+          <div class="form-floating">
+            <select class="form-select" id="cursoSelect" aria-label="Floating label select example">
+              <option value="">Selecione</option>
+            </select>
+            <label for="floatingSelect">Selecione o Curso</label>
+          </div>
+        </div>
+  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+  
+        <div class="mt-5 d-grid mx-4 ">
+          <button id="btnGerarCertifiacdo" class="btn btn-primary" type="button" onclick="">Gerar Certificado</button>
+        </div>
       </div>
-      <div id="rt3">
 
+      <div class="col align-self-end">
+        <div id="rt2" class="rounded-4 container-sm my-4 px-4 py-3">
+        </div>
+    
+        <div id="rt3" class="rounded-4 container-sm my-4 px-4 py-3">
+          <h5>Código de Validação</h5>
+        </div>
       </div>
     </div>
   </div>
-  
+
+
+
   <script src="assets/js/emissao.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

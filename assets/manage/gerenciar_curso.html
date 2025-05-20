@@ -12,7 +12,7 @@
   <header class="header d-flex justify-content-between">
     <nav id="navc" class="navbar navbar-expand-lg --bs-light">
       <div id="nb" class="container-fluid">
-        <a class="navbar-brand fs-4" href="#">Gerenciar Alunos</a>
+        <a class="navbar-brand fs-4" href="#">Gerenciar Cursos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,24 +26,23 @@
   </header>
 
   <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
-    <h4>Adicionar Aluno</h4>
+    <h4>Adicionar Curso</h4>
 
     <div id="msgError" class="mb-2"></div>
     <div id="msgSucess" class="mb-2"></div>
 
-    <form id="AlunoForm" class="row g-3 mb-4">
+    <form id="CursoForm" class="row g-3 mb-4">
       <div class="col-md-3">
-        <input type="text" id="nomeAluno" class="form-control" placeholder="Nome" autocomplete="off" required>
+        <input type="text" id="nomeCurso" class="form-control" placeholder="Nome do curso" autocomplete="off" required>
       </div>
       <div class="col-md-3">
-        <input type="number" id="cpfAluno" class="form-control" placeholder="CPF" required>
+        <input type="text" id="descCurso" class="form-control" placeholder="Descrição" autocomplete="off" required>
       </div>
       <div class="col-md-3">
-        <input type="email" id="emailAluno" class="form-control" placeholder="Email" autocomplete="off" required>
+        <input type="number" id="cargaHorariaCurso" class="form-control" placeholder="Carga Horária" required>
       </div>
       <div class="col-md-2 d-grid">
-          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarAluno()">Salvar</button>
-
+          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarCurso()">Salvar</button>
       </div>
     </form>
 
@@ -51,11 +50,11 @@
       <thead>
         <tr>
           <th scope="col">Nome</th>
-          <th scope="col">CPF</th>
-          <th scope="col">Email</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Carga Horária</th>
           <th class="action" scope="col">Ações</th>
       </thead>
-      <tbody class="table-group-divider" id="AlunoTBody">
+      <tbody class="table-group-divider" id="CursoTBody">
       </tbody>
     </table>
   </div>
@@ -65,23 +64,23 @@
       <div class="modal-content">
       
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Aluno</h1>
+          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Curso</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="M_nomeAluno" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="M_nomeAluno" required>
+              <label for="M_nomeCurso" class="form-label fw-bold">Nome</label>
+              <input type="text" class="form-control border border-black" id="M_nomeCurso" required>
             </div>
             <div class="mb-3">
-              <label for="M_cpfAluno" class="form-label">Cpf</label>
-              <input type="number" class="form-control" id="M_cpfAluno" required>
+              <label for="M_descCurso" class="form-label fw-bold">Descrição</label>
+              <input type="text" class="form-control border border-black" id="M_descCurso" required>
             </div>
             <div class="mb-3">
-              <label for="M_emailAluno" class="form-label">Email</label>
-              <input type="email" class="form-control" id="M_emailAluno" required>
+              <label for="M_cargaHorariaCurso" class="form-label fw-bold">Carga Horária</label>
+              <input type="number" class="form-control border border-black" id="M_cargaHorariaCurso" required>
             </div>
           </form>
         </div>
