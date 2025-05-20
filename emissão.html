@@ -6,6 +6,8 @@
   <title>EMC</title>
   <link rel="stylesheet" href="assets/css/emitir.css" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/emissao.js" defer></script>
 </head>
 <body class="body">
 
@@ -48,21 +50,21 @@
       <div id="rt" class="rounded-4 container-sm my-4 px-4 py-3 col align-self-start">
         <div class="mb-5">
           <h3>Alunos</h3>
-          <div class="form-floating">
+          <div class="form-floating border border-black rounded">
             <select class="form-select" id="alunoSelect" aria-label="Floating label select example">
-              <option value="">Selecione</option>
+              <option value="">Selecione o Aluno</option>
             </select>
-            <label for="floatingSelect">Selecione o Aluno</label>
           </div>
         </div>
+
         <br>
+        
         <div>
           <h3>Cursos</h3>
-          <div class="form-floating">
+          <div class="form-floating border border-black rounded">
             <select class="form-select" id="cursoSelect" aria-label="Floating label select example">
-              <option value="">Selecione</option>
+              <option value="">Selecione o Curso</option>
             </select>
-            <label for="floatingSelect">Selecione o Curso</label>
           </div>
         </div>
   
@@ -77,8 +79,12 @@
         </div>
       </div>
 
-      <div class="col align-self-end">
+      <div id="conteudo" class="col align-self-end">
         <div id="rt2" class="rounded-4 container-sm my-4 px-4 py-3">
+          <h4 class="fw-bold">Certificado</h4>
+          <div class="mt-5 d-grid mx-4 ">
+            <button id="BtnBaixarCertificado" class="btn btn-primary" type="button" onclick="BaixarPDF()">Baixar Certificado</button>
+          </div>
         </div>
     
         <div id="rt3" class="rounded-4 container-sm my-4 px-4 py-3">
@@ -89,8 +95,6 @@
   </div>
 
 
-
-  <script src="assets/js/emissao.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
