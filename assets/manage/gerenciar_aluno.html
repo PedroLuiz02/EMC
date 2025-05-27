@@ -10,7 +10,7 @@
 <body class="body">
 
   <header class="header d-flex justify-content-between">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav id="navc" class="navbar navbar-expand-lg --bs-light">
       <div id="nb" class="container-fluid">
         <a class="navbar-brand fs-4" href="#">Gerenciar Alunos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,82 +21,81 @@
       </div>
     </nav>
     <div class="bt me-3">
-      <button type="button" class="btn btn-outline-danger"><a href="../../dashboard.html">Sair</a></button>
+      <button type="button" class="btn btn-danger"><a href="../../dashboard.html" style="color: #fff;">Sair</a></button>
     </div>
   </header>
 
-  <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-1">
-    <h4 class="mt-4">Adicionar Aluno</h4>
-    <form id="alunoForm" class="row g-3 mb-4">
-      <input type="hidden" id="alunoId">
-      <div class="col-md-4">
-          <input type="text" id="nome" class="form-control" placeholder="Nome" required="">
+  <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
+    <h4>Adicionar Aluno</h4>
+
+    <div id="msgError" class="mb-2"></div>
+    <div id="msgSucess" class="mb-2"></div>
+
+    <form id="AlunoForm" class="row g-3 mb-4">
+      <div class="col-md-3">
+        <input type="text" id="nomeAluno" class="form-control" placeholder="Nome" autocomplete="off" required>
       </div>
       <div class="col-md-3">
-          <input type="text" id="cpf" class="form-control" placeholder="CPF" required="">
+        <input type="number" id="cpfAluno" class="form-control" placeholder="CPF" required>
       </div>
-      <div class="col-md-4">
-          <input type="email" id="email" class="form-control" placeholder="Email" required="">
+      <div class="col-md-3">
+        <input type="email" id="emailAluno" class="form-control" placeholder="Email" autocomplete="off" required>
       </div>
-      <div class="col-md-1 d-grid">
-          <button type="submit" class="btn btn-success">Salvar</button>
+      <div class="col-md-2 d-grid">
+          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarAluno()">Salvar</button>
+
       </div>
     </form>
 
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID</th>
           <th scope="col">Nome</th>
-          <th scope="col">Cpf</th>
+          <th scope="col">CPF</th>
           <th scope="col">Email</th>
-          <th scope="col">Ações</th>
-        </tr>
+          <th class="action" scope="col">Ações</th>
       </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>João</td>
-          <td>61856519616</td>
-          <td>joao@gmail.com</td>
-          <td>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-sm btn-primary me-1" type="button">Editar</button>
-              <button class="btn btn-sm btn-danger" type="button">Excluir</button>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <th scope="row">2</th>
-          <td>Caio</td>
-          <td>18961521615</td>
-          <td>caio@gmail.com</td>
-          <td>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-sm btn-primary me-1" type="button">Editar</button>
-              <button class="btn btn-sm btn-danger" type="button">Excluir</button>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <th scope="row">3</th>
-          <td>Rayssa</td>
-          <td>16518549621</td>
-          <td>ray@gmail.com</td>
-          <td>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-sm btn-primary me-1" type="button">Editar</button>
-              <button class="btn btn-sm btn-danger" type="button">Excluir</button>
-            </div>
-          </td>
-
-        </tr>
+      <tbody class="table-group-divider" id="AlunoTBody">
       </tbody>
     </table>
   </div>
+
+  <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Aluno</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="M_nomeAluno" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="M_nomeAluno" required>
+            </div>
+            <div class="mb-3">
+              <label for="M_cpfAluno" class="form-label">Cpf</label>
+              <input type="number" class="form-control" id="M_cpfAluno" required>
+            </div>
+            <div class="mb-3">
+              <label for="M_emailAluno" class="form-label">Email</label>
+              <input type="email" class="form-control" id="M_emailAluno" required>
+            </div>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="M_btnSalvar">Salvar Alterações</button>
+        </div>
   
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/aluno.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

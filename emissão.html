@@ -6,11 +6,13 @@
   <title>EMC</title>
   <link rel="stylesheet" href="assets/css/emitir.css" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/emissao.js" defer></script>
 </head>
 <body class="body">
 
   <header class="header d-flex justify-content-between">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg --bs-light" style="background-color: #FFF;">
       <div id="nb" class="container-fluid">
         <a class="navbar-brand" href="#">EMC</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,26 +39,61 @@
         </div>
       </div>
     </nav>
-    <div class="bt me-3">
+    <div id="loginCadastro" class="bt me-3">
       <button type="button" class="btn btn-outline-primary"><a rel="next" href="log_in.html">Login</a></button>
       <button type="button" class="btn btn-outline-secondary"><a href="regist.html">Cadastro</a></button>
     </div>
   </header>
 
-  <div class="d-flex flex-row mb-3">
-    <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-1">
-      <h3>Alunos</h3>
-      <h3>Cursos</h3>
-    </div>
-    <div>
-      <div id="rt2">
+  <div class="container text-center">
+    <div class="row">
+      <div id="rt" class="rounded-4 container-sm my-4 px-4 py-3 col align-self-start">
+        <div class="mb-5">
+          <h3>Alunos</h3>
+          <div class="form-floating border border-black rounded">
+            <select class="form-select" id="alunoSelect" aria-label="Floating label select example" aria-placeholder="Selecione o Aluno">
+              <option value="">Selecione o Aluno</option>
+            </select>
+          </div>
+        </div>
 
+        <br>
+        
+        <div>
+          <h3>Cursos</h3>
+          <div class="form-floating border border-black rounded">
+            <select class="form-select" id="cursoSelect" aria-label="Floating label select example" aria-placeholder="Selecione o Curso">
+              <option value="">Selecione o Curso</option>
+            </select>
+          </div>
+        </div>
+  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+  
+        <div class="mt-5 d-grid mx-4 ">
+          <button id="btnGerarCertificado" class="btn btn-primary" type="button" onclick="">Gerar Certificado</button>
+        </div>
       </div>
-      <div id="rt3">
 
+      <div id="conteudo" class="col align-self-end">
+        <div id="rt2" class="rounded-4 container-sm my-4 px-4 py-3">
+          <h4 class="fw-bold">Certificado</h4>
+          <div class="mt-5 d-grid mx-4 ">
+            <button id="BtnBaixarCertificado" class="btn btn-primary" type="button" onclick="BaixarPDF()">Baixar Certificado</button>
+          </div>
+        </div>
+    
+        <div id="rt3" class="rounded-4 container-sm my-4 px-4 py-3">
+          <h5>Código de Validação</h5>
+        </div>
       </div>
     </div>
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

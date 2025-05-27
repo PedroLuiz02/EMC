@@ -10,7 +10,7 @@
 <body class="body">
 
   <header class="header d-flex justify-content-between">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav id="navc" class="navbar navbar-expand-lg --bs-light">
       <div id="nb" class="container-fluid">
         <a class="navbar-brand fs-4" href="#">Gerenciar Usuários</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,61 +21,80 @@
       </div>
     </nav>
     <div class="bt me-3">
-      <button type="button" class="btn btn-outline-danger"><a href="../../dashboard.html">Sair</a></button>
+      <button type="button" class="btn btn-danger"><a href="../../dashboard.html" style="color: #fff;">Sair</a></button>
     </div>
   </header>
 
   <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
     <h4>Adicionar Usuário</h4>
-    <form id="userForm" class="row g-3 mb-4">
-      <input type="hidden" id="userId">
-      <div class="col-md-5">
-        <input type="email" id="email" class="form-control" placeholder="Email" required="">
+
+    <div id="msgError" class="mb-2"></div>
+    <div id="msgSucess" class="mb-2"></div>
+
+    <form id="usuarioForm" class="row g-3 mb-4">
+      <div class="col-md-3">
+        <input type="text" id="nomeUsuario" class="form-control" placeholder="Nome" autocomplete="off" required>
       </div>
-      <div class="col-md-5">
-        <input type="password" id="senhaUser" class="form-control" placeholder="Senha" required="">
+      <div class="col-md-3">
+        <input type="email" id="emailUsuario" class="form-control" placeholder="Email" autocomplete="off" required>
+      </div>
+      <div class="col-md-3">
+        <input type="password" id="senhaUsuario" class="form-control" placeholder="Senha" required>
       </div>
       <div class="col-md-2 d-grid">
-          <button type="submit" class="btn btn-success">Salvar</button>
+          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarUser()">Salvar</button>
+
       </div>
     </form>
 
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
           <th scope="col">Email</th>
-          <th scope="col">Ações</th>
-        </tr>
+          <th class="action" scope="col">Ações</th>
       </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>admin@emc.com</td>
-          <td>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-sm btn-primary me-1" type="button">Editar</button>
-              <button class="btn btn-sm btn-danger" type="button">Excluir</button>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <th scope="row">2</th>
-          <td>coadmin@emc.com</td>
-          <td>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-sm btn-primary me-1" type="button">Editar</button>
-              <button class="btn btn-sm btn-danger" type="button">Excluir</button>
-            </div>
-          </td>
-        </tr>
-
-        </tr>
+      <tbody class="table-group-divider" id="usuariosTBody">
       </tbody>
     </table>
   </div>
 
+  <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Usuário</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="M_nomeUsuario" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="M_nomeUsuario" required>
+            </div>
+            <div class="mb-3">
+              <label for="M_emailUsuario" class="form-label">Email</label>
+              <input type="email" class="form-control" id="M_emailUsuario" required>
+            </div>
+            <div class="mb-3">
+              <label for="M_senhaUsuario" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="M_senhaUsuario" required>
+            </div>
+          </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="M_btnSalvar">Salvar Alterações</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/usuarios.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
