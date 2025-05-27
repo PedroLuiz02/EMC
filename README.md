@@ -15,8 +15,6 @@ Este projeto simula a emissão de certificados educacionais. Ele armazena dados 
 
 - Cadastro de **usuários** (CRUD)
 - Cadastro de **alunos** e **cursos**
-- Vínculo entre alunos e cursos
-- Geração de **certificados únicos** com código de validação
 - Proteção de rotas com verificação de login
 - Interface responsiva com Bootstrap
 
@@ -25,10 +23,6 @@ Este projeto simula a emissão de certificados educacionais. Ele armazena dados 
 ## 🧠 Como Funciona
 
 - Os dados são salvos no `localStorage` do navegador.
-- A emissão do certificado exige:
-  - Selecionar um aluno cadastrado
-  - Selecionar um curso cadastrado
-- O certificado é salvo localmente, permitindo futuras consultas.
 
 ---
 
@@ -36,10 +30,8 @@ Este projeto simula a emissão de certificados educacionais. Ele armazena dados 
 
 1. Clone ou baixe o projeto.
 2. Abra o arquivo `index.html` no navegador.
-3. Cadastre um usuário e faça login.
+3. Faça login com o Usuário Padrão: admin@emc.com | senha:123456
 4. Cadastre alunos e cursos.
-5. Vá até a aba de certificados e gere um para um aluno e curso selecionados.
-6. Visualize e gerencie os certificados criados.
 
 ---
 
@@ -54,7 +46,6 @@ Este projeto simula a emissão de certificados educacionais. Ele armazena dados 
 
 ## 🛡️ Observações
 
-- Usuário Padrão: admin@emc.com | senha:123456
 - O projeto não utiliza banco de dados externo nem autenticação real.
 - Os dados são armazenados localmente e serão apagados ao limpar o cache do navegador.
 - Este sistema é uma simulação didática e não deve ser usado em produção.
