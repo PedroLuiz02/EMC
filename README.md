@@ -29,7 +29,7 @@ Este projeto simula a emissão de certificados educacionais. Ele armazena dados 
 ## ▶️ Como Usar
 
 1. Clone ou baixe o projeto.
-2. Abra o arquivo `index.html` no navegador.
+2. Abra o arquivo `index.html` no navegador ou utilize a extensão Live Server.
 3. Faça login com o Usuário Padrão: admin@emc.com | senha:123456
 4. Cadastre alunos e cursos.
 
