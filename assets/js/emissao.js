@@ -19,6 +19,11 @@ if(localStorage.getItem('token') == null){
 }
 
 
+function insertItem() {
+  let option = document.createElement('option')
+}
+
+
 
 
 

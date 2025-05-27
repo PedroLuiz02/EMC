@@ -1,12 +1,5 @@
 const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
 
-if (usuario) {
-    document.querySelector('#loginCadastro').innerHTML = `
-        <span class="me-3">Olá, ${usuario.nome}</span>
-        <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
-    `;
-}
-
 function logout() {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('token');
@@ -137,7 +130,7 @@ function insertItem(item, index) {
       </td>
     `
     usuariosTBody.appendChild(tr)
-  }
+}
 
 function editItem(index) {
     id = index
@@ -162,10 +155,10 @@ function deleteItem(index) {
 
 M_btnSalvar.addEventListener('click', () => {
   itens[id] = {
-    nome: M_nomeUsuario.value,
-    email: M_emailUsuario.value,
-    senha: M_senhaUsuario.value
-  }
+    nomeCad: M_nomeUsuario.value,
+    emailCad: M_emailUsuario.value,
+    senhaCad: M_senhaUsuario.value
+  }  
 
   setItensBD()
   loadItens()
