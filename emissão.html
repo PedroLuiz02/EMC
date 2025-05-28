@@ -75,20 +75,24 @@
         <br>
   
         <div class="mt-5 d-grid mx-4 ">
-          <button id="btnGerarCertificado" class="btn btn-primary" type="button" onclick="">Gerar Certificado</button>
+          <button id="btnGerarCertificado" class="btn btn-primary" type="button" onclick="GerarCertificado()">Gerar Certificado</button>
         </div>
       </div>
 
       <div id="conteudo" class="col align-self-end">
-        <div id="rt2" class="rounded-4 container-sm my-4 px-4 py-3">
+        <div id="rt2" class="rounded-4 container-sm my-4 px-4 py-3 position-relative">
           <h4 class="fw-bold">Certificado</h4>
-          <div class="mt-5 d-grid mx-4 ">
-            <button id="BtnBaixarCertificado" class="btn btn-primary" type="button" onclick="BaixarPDF()">Baixar Certificado</button>
+          <h5>De Conclusão De Curso</h5> <br>
+          <div id="Box">
+          </div>
+          <div class="mb-3 mx-auto position-absolute bottom-0 start-50 translate-middle-x">
+            <button id="BtnBaixarCertificado" class="btn btn-primary" type="button" onclick="BaixarPDF()" style="width: 25rem;">Baixar Certificado</button>
           </div>
         </div>
     
         <div id="rt3" class="rounded-4 container-sm my-4 px-4 py-3">
           <h5>Código de Validação</h5>
+          <span id="BoxValid"></span>
         </div>
       </div>
     </div>

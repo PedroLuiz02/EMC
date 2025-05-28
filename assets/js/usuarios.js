@@ -28,7 +28,6 @@ let msgError = document.querySelector('#msgError')
 let msgSucess = document.querySelector('#msgSucess')
 
 let validNome = false
-
 let validEmail = false
 let validSenha = false
 
