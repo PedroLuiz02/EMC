@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EMC</title>
-  <link rel="stylesheet" href="../css/g_usuarios.css" type="text/css">
+  <link rel="stylesheet" href="../assets/css/g_aluno.css" type="text/css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
 </head>
 <body class="body">
@@ -12,7 +12,7 @@
   <header class="header d-flex justify-content-between">
     <nav id="navc" class="navbar navbar-expand-lg --bs-light">
       <div id="nb" class="container-fluid">
-        <a class="navbar-brand fs-4" href="#">Gerenciar Usuários</a>
+        <a class="navbar-brand fs-4" href="#">Gerenciar Alunos</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,28 +21,28 @@
       </div>
     </nav>
     <div class="bt me-3">
-      <button type="button" class="btn btn-danger"><a href="../../dashboard.html" style="color: #fff;">Sair</a></button>
+      <button type="button" class="btn btn-danger"><a href="dashboard.html" style="color: #fff;">Sair</a></button>
     </div>
   </header>
 
   <div id="rt" class="rounded container-sm position-relative my-4 px-4 py-4">
-    <h4>Adicionar Usuário</h4>
+    <h4>Adicionar Aluno</h4>
 
     <div id="msgError" class="mb-2"></div>
     <div id="msgSucess" class="mb-2"></div>
 
-    <form id="usuarioForm" class="row g-3 mb-4">
+    <form id="AlunoForm" class="row g-3 mb-4">
       <div class="col-md-3">
-        <input type="text" id="nomeUsuario" class="form-control" placeholder="Nome" autocomplete="off" required>
+        <input type="text" id="nomeAluno" class="form-control" placeholder="Nome" autocomplete="off" required>
       </div>
       <div class="col-md-3">
-        <input type="email" id="emailUsuario" class="form-control" placeholder="Email" autocomplete="off" required>
+        <input type="number" id="cpfAluno" class="form-control" placeholder="CPF" required>
       </div>
       <div class="col-md-3">
-        <input type="password" id="senhaUsuario" class="form-control" placeholder="Senha" required>
+        <input type="email" id="emailAluno" class="form-control" placeholder="Email" autocomplete="off" required>
       </div>
       <div class="col-md-2 d-grid">
-          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarUser()">Salvar</button>
+          <button id="btnSalvar" class="btn btn-success" type="button" onclick="cadastrarAluno()">Salvar</button>
 
       </div>
     </form>
@@ -51,10 +51,11 @@
       <thead>
         <tr>
           <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
           <th scope="col">Email</th>
           <th class="action" scope="col">Ações</th>
       </thead>
-      <tbody class="table-group-divider" id="usuariosTBody">
+      <tbody class="table-group-divider" id="AlunoTBody">
       </tbody>
     </table>
   </div>
@@ -64,23 +65,23 @@
       <div class="modal-content">
       
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Usuário</h1>
+          <h1 class="modal-title fs-5" id="EditModalLabel">Editar Aluno</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="M_nomeUsuario" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="M_nomeUsuario" required>
+              <label for="M_nomeAluno" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="M_nomeAluno" required>
             </div>
             <div class="mb-3">
-              <label for="M_emailUsuario" class="form-label">Email</label>
-              <input type="email" class="form-control" id="M_emailUsuario" required>
+              <label for="M_cpfAluno" class="form-label">Cpf</label>
+              <input type="number" class="form-control" id="M_cpfAluno" required>
             </div>
             <div class="mb-3">
-              <label for="M_senhaUsuario" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="M_senhaUsuario" required>
+              <label for="M_emailAluno" class="form-label">Email</label>
+              <input type="email" class="form-control" id="M_emailAluno" required>
             </div>
           </form>
         </div>
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <script src="../js/usuarios.js"></script>
+  <script src="../src/js/aluno.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
