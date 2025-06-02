@@ -1,15 +1,12 @@
-function logar(){
+(function init() {
     if (!localStorage.getItem('listaUser')) {
-        const usuarioPadrao = [
-            {
-                nomeCad: 'admin',
-                emailCad: 'admin@emc.com',
-                senhaCad: '123456'
-            }
-        ];
-        localStorage.setItem('listaUser', JSON.stringify(usuarioPadrao));
+        localStorage.setItem('listaUser', JSON.stringify([
+            { nomeCad: 'admin', emailCad: 'admin@emc.com', senhaCad: '123456' }
+        ]));
     }
+})();
 
+function logar(){
     let email = document.querySelector('#email')
     let emailLabel = document.querySelector('#emailLabel')
 
