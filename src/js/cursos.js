@@ -143,6 +143,27 @@ function insertItem(item, index) {
   cursoTBody.appendChild(tr)
 }
 
+if (!localStorage.getItem('cursos')) {
+  const cursosPadrao = [
+    {
+      nome: 'Introdução à Programação com Python',
+      desc: 'Curso de fundamentos de Programação Python',
+      cargaHoraria: '16'
+    },
+    {
+      nome: 'UX Design: Experiência do Usuário na Prática',
+      desc: 'Curso de fundamentos de UX Design',
+      cargaHoraria: '30'
+    },
+    {
+      nome: 'Noções de Segurança da Informação',
+      desc: 'Curso de fundamentos de Segurança',
+      cargaHoraria: '25'
+    }
+  ];
+  localStorage.setItem('cursos', JSON.stringify(cursosPadrao));
+}
+
 function editItem(index) {
   id = index
   const curso = itens[index]

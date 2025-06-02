@@ -136,6 +136,27 @@ function insertItem(item, index) {
   AlunoTBody.appendChild(tr)
 }
 
+if (!localStorage.getItem('Aluno')) {
+  const alunosPadrao = [
+    {
+      nome: 'Beatriz da Silva',
+      cpf: '19187217387',
+      email: 'beatriz@gmail.com'
+    },
+    {
+      nome: 'Caio Roberto',
+      cpf: '15414181818',
+      email: 'caio@gmail.com'
+    },
+    {
+      nome: 'Jasmin Costa',
+      cpf: '65181514141',
+      email: 'jasmin@gmail.com'
+    }
+  ];
+  localStorage.setItem('Aluno', JSON.stringify(alunosPadrao));
+}
+
 function editItem(index) {
   id = index
   const Aluno = itens[index]

@@ -25,7 +25,7 @@ function logar(){
     });
 
     if(email.value == userValid.email && senha.value == userValid.senha){
-        window.location.href = 'index.html'
+        window.location.href = '../index.html'
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
         
         localStorage.setItem('token', token)
