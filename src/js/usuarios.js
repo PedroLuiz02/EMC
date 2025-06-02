@@ -166,17 +166,6 @@ M_btnSalvar.addEventListener('click', () => {
   modal.hide()
 })
 
-if (!localStorage.getItem('listaUser')) {
-    const usuarioPadrao = [
-      {
-        nomeCad: 'admin',
-        emailCad: 'admin@emc.com',
-        senhaCad: '123456'
-      }
-    ]
-    localStorage.setItem('listaUser', JSON.stringify(usuarioPadrao))
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   loadItens()
 })

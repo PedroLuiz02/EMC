@@ -1,4 +1,15 @@
 function logar(){
+    if (!localStorage.getItem('listaUser')) {
+        const usuarioPadrao = [
+            {
+                nomeCad: 'admin',
+                emailCad: 'admin@emc.com',
+                senhaCad: '123456'
+            }
+        ];
+        localStorage.setItem('listaUser', JSON.stringify(usuarioPadrao));
+    }
+
     let email = document.querySelector('#email')
     let emailLabel = document.querySelector('#emailLabel')
 
@@ -8,11 +19,7 @@ function logar(){
     let msgError = document.querySelector('#msgError')
     let listaUser = JSON.parse(localStorage.getItem('listaUser')) || []
 
-    let userValid = {
-        nome: '',
-        email: '',
-        senha: ''
-    }
+    let userValid = { nome: '', email: '', senha: '' };
 
     listaUser.forEach((item) => {
         if(email.value == item.emailCad && senha.value == item.senhaCad){
