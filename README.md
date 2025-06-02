@@ -67,6 +67,3 @@ Ele inclui funcionalidades completas de CRUD para usuários, alunos e cursos, al
 ## 📃 Licença
 
 Este projeto foi desenvolvido apenas para fins educacionais.
-
-
-
