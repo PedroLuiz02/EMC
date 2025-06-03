@@ -3,12 +3,12 @@ const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
 function logout() {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('token');
-    window.location.href = 'log_in.html';
+    window.location.href = '../../pages/log_in.html';
 }
 
 if(localStorage.getItem('token') == null){
   alert('você precisa estar logado para acessar essa página')
-  window.location.href = "log_in.html";
+  window.location.href = "../../pages/log_in.html";
 }
 
 let modal = document.querySelector('.modal-container')

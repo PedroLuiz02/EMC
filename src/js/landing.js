@@ -10,5 +10,5 @@ if (usuario) {
 function logout() {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('token');
-    window.location.href = 'log_in.html';
+    window.location.href = '../../pages/log_in.html';
 }
